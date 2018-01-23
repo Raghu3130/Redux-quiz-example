@@ -44,17 +44,18 @@ class Quiz extends React.Component{
 
     return (
       <div><b> Answer in true or false and not capitalized.</b>
-        <p>{question[index-1].question}</p>
+        <p>Ques{" "+index+":"}{question[index-1].question}</p>
         <div>
             <input type="text" value={question[index-1].givenAnswer} onInput={(e) => this.setinput(e,index-1)}/>
             </div>
-            <a href="javascript:void(0)" onClick={() => this.goBack()}>Previous</a>
+            
             <a href="javascript:void(0)" onClick={() => this.submitDispatch()}>{
             question.length == index-1 &&
             <p>result</p>
             ||
             <p>Next</p>
           }</a>
+          <a href="javascript:void(0)" onClick={() => this.goBack()}>Previous</a>
 
 
         </div>
